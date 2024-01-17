@@ -1,0 +1,27 @@
+.container{
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+.cardContainer{ 
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.content{
+    border: 1px ridge black;
+    background-color: #d3d3d3;
+    text-align: center;
+}
+
+
+.card{
+    height: 315px;
+    width: 215px;
+    background-color: #333333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
