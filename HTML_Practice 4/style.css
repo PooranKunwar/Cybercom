@@ -1,0 +1,6 @@
+table, th, td{
+    border: 2px ridge black;
+    border-collapse: collapse;
+    width: 700px;
+    
+}
