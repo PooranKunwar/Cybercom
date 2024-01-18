@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-... (integrity value) ..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <title>Contact Us Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="image">
+                <img class="image" src="./image/1.jpg" alt="Your Image Description">
+                <div class="overlay">
+                    <div class="text">CONTACT US</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="formcontainer">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="firstName"><i class="far fa-user"></i></label>
+                    <input type="text" id="firstName" placeholder="First Name" name="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><i class="far fa-envelope"></i></label>
+                    <input type="email" id="email" placeholder="Eg. example@gmail.com" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile"><i class="fad fa-mobile"></i></label>
+                    <input type="number" id="mobile" placeholder="Eg - 1800 000000" name="mobile" pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="comment"><i class="far fa-comment"></i></label>
+                    <textarea id="comment" placeholder="Your Comments" name="comment" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" id="btn">SEND NOW</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>
