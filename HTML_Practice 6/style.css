@@ -1,0 +1,87 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+label{
+    font-weight: bold;
+}
+
+button{
+    height: 40px;
+    width: 80px;
+    margin-right: 20px;
+}
+
+fieldset{
+    margin-bottom: 15px;
+}
+
+#fname{
+    margin-right: 135px;
+}
+
+#lname{
+    margin-right: 135px;
+}
+
+#bio{
+    margin-right: 135px;
+}
+
+#agegrp{
+    margin-right: 130px;
+}
+
+#street{
+    margin-right: 165px;
+}
+
+#city{
+    margin-right: 175px;
+}
+
+#img{
+    margin-right: 165px;
+}
+
+#hobbies{
+    margin-right: 150px;
+    width: 100px;
+}
+
+#favcar{
+    margin-right: 100px;
+    width: 100px;
+}
+
+#favtransport{
+    margin-right: 10px;
+    width: 100px;
+}
+
+legend{
+    font-weight: bold;
+}
+.parent{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.chlid{
+    width: 60%;
+}
+
+.form-group{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+h3{
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+}

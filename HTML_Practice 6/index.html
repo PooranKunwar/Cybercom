@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Form</title>
+</head>
+
+<body>
+    <div class="parent">
+
+        <div class="chlid">
+
+            <form action="success.html">
+
+                <fieldset>
+                    <legend>Your address</legend><br>
+                    <div class="form-group">
+                        <label id="fname">First name</label> <input type="text" /><br><br>
+                        <label id="lname">Last name</label> <input type="text" /><br><br>
+                        <label id="street">Street</label> <input type="text" /><br><br>
+                        <label id="city">City</label> <input type="text" />
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional details</legend><br>
+                    <div class="form-group">
+                        <label id="bio">Biography</label> <textarea></textarea><br><br>
+                        <label id="img">Image</label> <input class="inpt" type="file" /><br><br>
+                        <label id="agegrp" for="agegrp">Age Group</label>
+                        <select id="agegrp">
+                            <option value="#">0 to 9 year</option>
+                            <option value="#">10 to 19 yearaab</option>
+                            <option value="#">20 to 29 year</option>
+                            <option value="#">30 to 39 year</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Intrest</legend><br>
+                    <div class="form-group">
+                        <label id="hobbies" for="hobbies">Hobbies</label>
+                        <select id="hobbies" multiple>
+                            <option value="#">Reading</option>
+                            <option value="#">Dancing</option>
+                            <option value="#">Coding</option>
+                            <option value="#">Runing</option>
+                        </select><br><br>
+                        <label id="favcar" for="favcar">Favoutite car ?</label>
+                        <select name="favcar" id="favcar">
+                            <option value="#">Volvo</option>
+                            <option value="#">Audi</option>
+                            <option value="#">Tesla</option>
+                            <option value="#">Tata</option>
+                        </select><br><br>
+                        <label id="favtransport" for="favtransport">Favoutite public transport ?</label>
+                        <select name="favtransport" id="favtransport" multiple>
+                            <option value="#">Ground</option>
+                            <option value="#">Train</option>
+                            <option value="#">Bus</option>
+                            <option value="#">Water</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
