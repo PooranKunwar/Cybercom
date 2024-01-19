@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result</title>
+</head>
+<body>
+
+  <h2>Result</h2>
+
+  <script>
+   
+    var formData = JSON.parse(localStorage.getItem('formData'));
+
+    if (formData) {
+      document.write("<p> First Name: " + formData.firstname + "</p>");
+      document.write("<p>Last Name: " + formData.lastname + "</p>");
+      document.write("<p>Month: " + formData.month + "</p>");
+      document.write("<p>Gender: " + formData.gender + "</p>");
+      document.write("<p> Email: " + formData.confirmemail + "</p>");
+      document.write("<p>Password: " + formData.confirmpass + "</p>");
+      document.write("<p>Security Question: " + formData.state + "</p>");
+      document.write("<p> Security Answer: " + formData.securityQuestion + "</p>");
+      document.write("<p>Address: " + formData.address + "</p>");
+      document.write("<p> City: " + formData.city + "</p>");
+      document.write("<p>State: " + formData.state + "</p>");
+      document.write("<p>Zip Code: " + formData.zipCode + "</p>");
+      document.write("<p>Phone: " + formData.phone + " " + formData.ptype +  "</p>");
+
+    } else {
+      document.write("<p>No form data available.</p>");
+    }
+
+    
+    localStorage.removeItem('formData');
+  </script>
+
+</body>
+</html>

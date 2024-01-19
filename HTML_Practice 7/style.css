@@ -1,0 +1,88 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    height:760px;
+    width: 35%;
+    margin-top: 10px;
+    background-color: lightgrey;
+}
+
+h5{
+    padding: 15px;
+    font-size: 16px;
+}
+
+label{
+    margin-top: 5px;
+    margin-left: 90px;
+    display: inline-block;
+}
+
+input{
+    height: 20px;
+    width: 200px;
+    
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+button{
+    margin-top: 10px;
+    margin-left: 110px;
+    height: 30px;
+    width: 70px;
+}
+
+select{
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+span{
+    font-size: 13px;
+    margin-top: -10px;
+    display: block;
+    margin-left: 150px;
+}
+
+.sspan{
+    font-size: 13px;
+    margin-top: -10px;
+    display: block;
+    margin-left: 200px;
+}
+
+.zipcode{
+    width: 60px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    display: block;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <title>Form</title>
+</head>
+
+<body>
+
+  <form action="result.html" onsubmit="saveFormData()">
+    <h5>Personal Information</h4>
+
+      <label for="firstname"> First Name :</label>
+      <input type="text" id="firstname" name="firstname"><br>
+
+      <label for="lastname"> Last Name :</label>
+      <input type="text" id="lastname" name="lastname"><br>
+
+      <label for="month">Date of Birth:</label>
+      <select name="month" id="month">
+        <option value="">Month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+
+      <select name="day" id="day">
+        <option value="">Day</option>
+        <option value="0 - 10">0 - 10</option>
+        <option value="11 - 20">11 - 20</option>
+        <option value="21 - 30">21 - 30</option>
+      </select>
+
+      <select name="year" id="year">
+        <option value="">Year</option>
+        <option value="1990-2000">1990-2000</option>
+        <option value="2001-2010">2001-2010</option>
+        <option value="2011-2020">2011-2020</option>
+        <option value="2021-2030">2021-2030</option>
+      </select>
+
+      <div class="tooltip">
+        <i class="fas fa-question-circle" style="color: #1e48f1"></i>
+        <span class="tooltiptext">Please select correctly</span>
+      </div>
+
+
+
+      <label for="gender"> Gender :</label>
+      <select id="gender" name="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <div class="tooltip">
+        <i class="fas fa-question-circle" style="color: #1e48f1"></i>
+        <span class="tooltiptext">Please select correctly</span>
+      </div>
+
+      <h5>Account Information</h4>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email">
+        <span>(your email address will be your username)</span>
+
+        <label for="confirm-email">Re-type Email :</label>
+        <input type="email" id="confirm-email" name="confirm-email">
+
+        <label for="pass">Password:</label>
+        <input type="password" name="pass" minlength="8" pattern=".*\d.*"
+          title="Minimum 8 characters, at least 1 number">
+        <span>(min. 8 characters, 1 number. case-sensitive.)</span>
+
+
+        <label for="confirm-pass">Re-type Password:</label>
+        <input type="password" id="confirm-pass" name="confirm-pass">
+
+        <label for="securityQuestion">Security Question:</label>
+        <select name="securityQuestion" id="securityQuestion">
+          <option value="">Choose a security question</option>
+          <option value="First pet name">Screen</option>
+          <option value="FIrst Vehicle">Marwell</option>
+        </select>
+
+        <div class="tooltip">
+          <i class="fas fa-question-circle" style="color: #1e48f1"></i>
+          <span class="tooltiptext">Please select correctly</span>
+        </div>
+
+        <label for="securityAnswer">Security Answer:</label>
+        <input type="text" id="securityAnswer" name="securityAnswer">
+        <span class="sspan">(non case-sensitive.)</span>
+
+
+        <h5>Contact Information</h4>
+
+          <label for="address">Address :</label>
+          <input type="text" id="address" name="address"><br>
+
+          <label for="city">City :</label>
+          <input type="text" id="city" name="city"><br>
+
+          <label for="state">State:</label>
+          <select name="state" id="state">
+            <option value="">Choose a state</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Maharashtra">Maharashtra</option>
+          </select><br>
+
+          <label for="zipCode">Zip Code:</label>
+          <input class="zipcode" id="zipCode" type="text" name="zipCode"><input class="zipcode" type="text"
+            name="zipCode" placeholder="Optional"><br>
+
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" pattern="[\d]{10}" title="No spaces or dashes">
+          <div class="tooltip">
+            <i class="fas fa-question-circle" style="color: #1e48f1"></i>
+            <span class="tooltiptext">Please select correctly</span>
+          </div>
+          <select name="ptype" id="ptype">
+            <option value="mobile" id="ptype">Mobile</option>
+            <option value="telephone">Telephone</option>
+          </select><br>
+          <span class="span">(no Spaces or dashes)</span>
+
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+  </form>
+
+  <script>
+    function saveFormData() {
+      var firstname = document.getElementById('firstname').value;
+      var lastname = document.getElementById('lastname').value;
+      var confirmemail = document.getElementById('confirm-email').value;
+      var confirmpass = document.getElementById('confirm-pass').value;
+      var securityAnswer = document.getElementById('securityAnswer').value;
+      var address = document.getElementById('address').value;
+      var city = document.getElementById('city').value;
+      var zipCode = document.getElementById('zipCode').value;
+      var phone = document.getElementById('phone').value;
+      var gender = document.getElementById('gender').value;
+      var state = document.getElementById('state').value;
+      var securityQuestion = document.getElementById('securityQuestion').value;
+      var ptype = document.getElementById('ptype').value;
+      var month = document.getElementById('month').value;
+
+      localStorage.setItem('formData', JSON.stringify({
+        firstname, lastname, confirmemail, confirmpass, securityAnswer,
+        address, city, zipCode, phone, gender, state, securityQuestion, ptype, month
+      }));
+    }
+  </script>
+
+</body>
+
+</html>
