@@ -15,10 +15,10 @@
     <h5>Personal Information</h4>
 
       <label for="firstname"> First Name :</label>
-      <input type="text" id="firstname" name="firstname"><br>
+      <input type="text" id="firstname" name="firstname" required><br>
 
       <label for="lastname"> Last Name :</label>
-      <input type="text" id="lastname" name="lastname"><br>
+      <input type="text" id="lastname" name="lastname" required><br>
 
       <label for="month">Date of Birth:</label>
       <select name="month" id="month">
@@ -74,7 +74,7 @@
       <h5>Account Information</h4>
 
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" required>
         <span>(your email address will be your username)</span>
 
         <label for="confirm-email">Re-type Email :</label>
@@ -82,7 +82,7 @@
 
         <label for="pass">Password:</label>
         <input type="password" name="pass" minlength="8" pattern=".*\d.*"
-          title="Minimum 8 characters, at least 1 number">
+          title="Minimum 8 characters, at least 1 number" required>
         <span>(min. 8 characters, 1 number. case-sensitive.)</span>
 
 
@@ -102,17 +102,17 @@
         </div>
 
         <label for="securityAnswer">Security Answer:</label>
-        <input type="text" id="securityAnswer" name="securityAnswer">
+        <input type="text" id="securityAnswer" name="securityAnswer" required>
         <span class="sspan">(non case-sensitive.)</span>
 
 
         <h5>Contact Information</h4>
 
           <label for="address">Address :</label>
-          <input type="text" id="address" name="address"><br>
+          <input type="text" id="address" name="address" required><br>
 
           <label for="city">City :</label>
-          <input type="text" id="city" name="city"><br>
+          <input type="text" id="city" name="city" required><br>
 
           <label for="state">State:</label>
           <select name="state" id="state">
@@ -124,11 +124,11 @@
           </select><br>
 
           <label for="zipCode">Zip Code:</label>
-          <input class="zipcode" id="zipCode" type="text" name="zipCode"><input class="zipcode" type="text"
+          <input class="zipcode" id="zipCode" type="text" name="zipCode" required><input class="zipcode" type="text"
             name="zipCode" placeholder="Optional"><br>
 
           <label for="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone" pattern="[\d]{10}" title="No spaces or dashes">
+          <input type="tel" id="phone" name="phone" pattern="[\d]{10}" title="No spaces or dashes" required>
           <div class="tooltip">
             <i class="fas fa-question-circle" style="color: #1e48f1"></i>
             <span class="tooltiptext">Please select correctly</span>
