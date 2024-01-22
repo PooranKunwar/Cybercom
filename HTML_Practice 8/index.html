@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+</head>
+
+<body>
+
+    <form id="formFlightBooking">
+
+        <h2>Flight Booking</h2>
+
+        <label for="txtFirstName">First Name:</label>
+        <input type="text" id="txtFirstName" name="txtFirstName">
+
+        <label for="txtLastName">Last Name:</label>
+        <input type="text" id="txtLastName" name="txtLastName">
+
+        <label for="ddGender">Gender:</label>
+        <select id="ddGender" name="ddGender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="telPhone">Phone Number:</label>
+        <input type="tel" id="telPhone" name="telPhone">
+
+        <!-- <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" equalTo="#password"> -->
+
+        <label for="ddAirlineName">Airlines Name:</label>
+        <select id="ddAirlineName" name="ddAirlineName">
+            <option value="">Select your airlines</option>
+            <option value="indigo">Indigo</option>
+            <option value="air-india">Air India</option>
+            <option value="emirate">Emirate</option>
+        </select>
+
+        <label for="ddTravelClass">Travel Class:</label>
+        <select id="ddTravelClass" name="ddTravelClass">
+            <option value="">Select your travel class</option>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first-class">First Class</option>
+        </select>
+
+        <label for="numberAdults">Number of Adults:</label>
+        <input type="number" id="numberAdults" name="numberAdults">
+
+        <label for="txtFrom">From:</label>
+        <input type="text" id="txtFrom" name="txtFrom">
+
+        <label for="dDateofTravel">Date of Travel:</label>
+        <input type="date" id="dDateofTravel" name="dDateofTravel">
+
+        <label for="timeFlight">Flight Time:</label>
+        <input type="time" id="timeFlight" name="timeFlight">
+
+        <label for="txtTo">To:</label>
+        <input type="text" id="txtTo" name="txtTo">
+
+        <button type="submit">Done</button>
+
+    </form>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#formFlightBooking").validate({
+                rules: {
+                    txtFirstName: "required",
+                    txtLastName: "required",
+                    ddGender: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    telPhone: "required",
+                    // password: {
+                    //     required: true,
+                    //     minlength: 6
+                    // },
+                    // confirmPassword: {
+                    //     required: true,
+                    //     equalTo: "#password"
+                    // },
+                    ddAirlineName: "required",
+                    ddTravelClass: "required",
+                    numberAdults: "required",
+                    txtFrom: "required",
+                    dDateofTravel: "required",
+                    timeFlight: "required",
+                    txtTo: "required",
+                },
+                messages: {
+                    txtFirstName: "Please enter your first name",
+                    txtLastName: "Please enter your last name",
+                    ddGender: "Please select your gender",
+                    email: {
+                        required: "Please enter your email address",
+                        email: "Please enter a valid email address"
+                    },
+                    telPhone: "Please enter your phone number",
+                    // password: {
+                    //     required: "Please enter a password",
+                    //     minlength: "Your password must be at least 6 characters long"
+                    // },
+                    // confirmPassword: {
+                    //     required: "Please confirm your password",
+                    //     equalTo: "Passwords do not match"
+                    // },
+                    ddAirlineName: "Please select your airlines",
+                    ddTravelClass: "Please select your travel class",
+                    numberAdults: "Please enter number of adults",
+                    txtFrom: "Please enter your departure country",
+                    dDateofTravel: "Please select travel date",
+                    timeFlight: "Please select your travel time",
+                    txtTo: "Please enter your destination country",
+                },
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
