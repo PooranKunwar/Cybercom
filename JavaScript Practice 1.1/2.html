@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Manipulation</title>
+</head>
+<body>
+
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <input type="text" id="newItem" placeholder="Enter a new Item">
+    <button onclick="addItem()">+</button>
+    <button onclick="removeItem()">-</button>
+
+    <script>
+
+        function addItem(){
+            var newItemText = document.getElementById("newItem").value;
+            if (newItemText.trim() !== "") {
+                var newItem = document.createElement("li");
+                newItem.appendChild(document.createTextNode(newItemText));
+                document.getElementById("itemList").appendChild(newItem);
+                document.getElementById("newItem").value = "";
+            }
+        };
+
+        function removeItem(){
+            var itemList = document.getElementById("itemList");
+            var lastItem = itemList.lastElementChild;
+            if(lastItem){
+                itemList.removeChild(lastItem)
+            }
+        };
+
+    </script>
+
+</body>
+</html>

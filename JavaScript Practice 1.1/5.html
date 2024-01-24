@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Source Change</title>
+</head>
+<body>
+
+    <img id="image1" src="https://via.placeholder.com/150" alt="Image 1">
+    <img id="image2" src="https://via.placeholder.com/150" alt="Image 2">
+    <img id="image3" src="https://via.placeholder.com/150" alt="Image 3"><br>
+
+    <button onclick="changeImage('image1')">Change Image 1</button>
+    <button onclick="changeImage('image2')">Change Image 2</button>
+    <button onclick="changeImage('image3')">Change Image 3</button>
+
+    <script>
+        function changeImage(imageId) {
+            
+            var newImageUrl;
+
+            switch (imageId) {
+                case 'image1':
+                    newImageUrl = 'https://via.placeholder.com/150/FF5733/000000?text=Image+1';
+                    break;
+                case 'image2':
+                    newImageUrl = 'https://via.placeholder.com/150/3498DB/000000?text=Image+2';
+                    break;
+                case 'image3':
+                    newImageUrl = 'https://via.placeholder.com/150/2ECC71/000000?text=Image+3';
+                    break;
+                default:
+                    console.error('Unexpected image ID');
+                    return;
+            }
+
+            document.getElementById(imageId).src = newImageUrl;
+        }
+    </script>
+
+</body>
+</html>
