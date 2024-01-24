@@ -12,7 +12,7 @@ body{
 }
 
 .container{
-    height:225vh;
+    height:215vh;
     display: flex;
     justify-content:center;
 }
@@ -37,32 +37,27 @@ body{
 .ddGender{
     width:50%;
     height:40px;
-    border-radius:5px;
     color: gray;
-    
     display: block;
-    
 
 }
 
 .input-container{
     display: flex;
-     justify-content: center;
-     align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .txtPatienceFirstName{
     margin-top: 12px;
     width:100%;
     height:40px;
-    border-radius:5px;
     color: gray;
 }
 
 .txtPatienceLastName{
     width:100%;
     height:40px;
-    border-radius:5px;
     color: gray;
     margin-top:30px;
    
@@ -78,11 +73,15 @@ body{
     margin-left:40px;
 }
 
-.pgeneral-patient-information label{
+.labelGender{
+    font-weight: bold;
     display:block;
     margin-bottom:12px;
-    font-weight: bold;
+}
 
+.general-patient-information label{
+    font-weight: bold;
+    display:block;
 }
 .general-patient-information label::after{
     content:"*";
@@ -176,7 +175,6 @@ body{
 .patient-details-input{
     width:50%;
     height:40px;
-    border-radius:5px;
     color: gray;
 }
 
@@ -234,7 +232,6 @@ body{
 .license-container input {
     width:50%;
     height:40px;
-    border-radius:5px;
     color: gray;
     margin-top:10px;
 }
@@ -344,5 +341,4 @@ input.error {
     color: red;
     font-size: 13px;
     margin-top: 3px;
-    font-weight: bold;
 }

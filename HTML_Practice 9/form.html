@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    
     <form id="formPatientMedicalHistroy" action="#" method="post">
 
         <div class="container">
@@ -28,7 +29,7 @@
                     <section class="general-patient-information-section">
 
                         <div class="general-patient-information">
-                            <label for="ddGender">Patient Gender</label>
+                            <label for="ddGender" class="labelGender">Patient Gender</label>
                             <select class="ddGender" name="ddGender" id="ddGender">
                                 <option value="">Please Select</option>
                                 <option value="male">Male</option>
@@ -52,11 +53,11 @@
                         </div>
 
                         <div class="patience-birth-date-container">
-                            <label for="ddBirthDate">Patient Birth Date</label>
+                            <label for="ddMonth">Patient Birth Date</label>
                             <div class="ddMDY">
                                 <div class="month">
-                                    <select class="ddStyle" name="ddMonth" id="ddBirthDate">
-                                        <option value="">Please Select a Month</option>
+                                    <select class="ddStyle" name="ddMonth" id="ddMonth">
+                                        <option value="null">Please Select a Month</option>
                                         <option value="january">January</option>
                                         <option value="february">February</option>
                                         <option value="march">March</option>
@@ -73,7 +74,7 @@
                                     <span>Month</span>
                                 </div>
                                 <div class="day">
-                                    <select class="ddStyle" name="ddDay" id="ddBirthDate">
+                                    <select class="ddStyle" name="ddDay" id="ddDay">
                                         <option value="">Please Select a Day</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -110,7 +111,7 @@
                                     <span>Day</span>
                                 </div>
                                 <div class="year">
-                                    <select class="ddStyle" name="ddYear" id="ddBirthDate">
+                                    <select class="ddStyle" name="ddYear" id="ddYear">
                                         <option value="">Please Select a Year</option>
                                         <option value="2000">2000</option>
                                         <option value="2001">2001</option>
@@ -162,7 +163,7 @@
                         </div>
 
                         <div class="patient-details-container">
-                            <label for="txtPatienceReasonSeeing">Reason for seeing the doctor:</label>
+                            <label for="txtPatienceReasonSeeing">Reason for seeing the doctor</label>
                             <input class="patient-details-input" id="txtPatienceReasonSeeing"
                                 name="txtPatienceReasonSeeing" type="text">
                         </div>
@@ -386,58 +387,70 @@
     <script>
         $(document).ready(function () {
 
-            $("#formPatientMedicalHistroy").validate({
-                rules: {
-                    ddGender: "required",
-                    txtPatienceFirstName: "required",
-                    txtPatienceLastName: "required",
-                    ddMonth: "required",
-                    ddDay: "required",
-                    ddYear: "required",
-                    txtPatienceHeight: {
-                        required: true,
-                        number: true,
-                    },
-                    txtPatienceWeigth: {
-                        required: true,
-                        number: true
-                    },
-                    txtPatienceMail: {
-                        required: true,
-                        email: true
-                    },
-                    txtPatienceReasonSeeing: "required",
-                },
-                messages: {
-                    ddGender: "Please select patient gender",
-                    txtPatienceFirstName: "Please enter the patient first name",
-                    txtPatienceLastName: "Please enter the patient last name",
-                    ddMonth: "Please select patient month",
-                    ddDay: "Please select patient Day",
-                    ddYear: "Please select patient birth date",
+            $("#formPatientMedicalHistroy").submit(function (event) {
 
-                    txtPatienceHeight: {
-                        required: "Please enter patient height",
-                        number: "Please enter a valid number"
-                    },
-                    txtPatienceWeigth: {
-                        required: "Please enter patient weight",
-                        number: "Please enter a valid number"
-                    },
-                    txtPatienceMail: {
-                        required: "Please enter patient email",
-                        email: "Please enter a valid email address"
-                    },
-                    txtPatienceReasonSeeing: "Please enter patient reason for seeing the doctor",
-                },
+                event.preventDefault();
 
-                submitHandler: function (form) {
-                    alert("Your details have been added successfully");
 
-                    return false;
+                if (validateForm()) {
+
+                    alert("Form submitted successfully !");
+
                 }
             });
+
+
+            function validateForm() {
+
+                var patientGender = $("#ddGender").val().trim();
+                var patientFirstName = $("#txtPatienceFirstName").val().trim();
+                var patientLastName = $("#txtPatienceLastName").val().trim();
+                var patientHeight = $("#txtPatienceHeight").val().trim();
+                var patientWeight = $("#txtPatienceWeigth").val().trim();
+                var patientMail = $("#txtPatienceMail").val().trim();
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                var patientReasonSeeing = $("#txtPatienceReasonSeeing").val().trim();
+                var day = $("#ddDay").val();
+                var month = $("#ddMonth").val();
+                var year = $("#ddYear").val();
+
+
+
+                if (patientGender === "") {
+                    alert("Please select the patient gender.");
+                    return false;
+                }
+                else if (patientFirstName === "" && patientLastName === "") {
+                    alert("Please enter the patient first name.");
+                    return false;
+                }
+                else if (patientLastName === "") {
+                    alert("Please enter the patient last name.");
+                    return false;
+                }
+                else if (!/^\d+$/.test(patientHeight)) {
+                    alert("Please enter a valid numeric value for patient height.");
+                    return false;
+                }
+                else if (!/^\d+$/.test(patientWeight)) {
+                    alert("Please enter a valid numeric value for patient weight.");
+                    return false;
+                }
+                else if (!emailPattern.test(patientMail)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+                else if (patientReasonSeeing === "") {
+                    alert("Please enter the patient reason for seeing the doctor.");
+                    return false;
+                }
+                else if (day === "" || month === "" || year === "") {
+                    return "Please select a valid date of birth.";
+                }
+                return true;
+            }
         });
+
     </script>
 
 </body>
