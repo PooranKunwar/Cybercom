@@ -1,0 +1,348 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    background-color: #f3f3fe;
+    color: #2c3345;
+}
+
+.container{
+    height:225vh;
+    display: flex;
+    justify-content:center;
+}
+
+.form-container{
+    background-color: white;
+    height:200%;
+    width: 800px;
+    margin-top:80px;
+   
+}
+
+.heading{
+    border-bottom:2px solid  #f3f3fe;
+}
+
+.heading h1{
+    margin-left:50px;
+    margin-block:40px;
+}
+
+.ddGender{
+    width:50%;
+    height:40px;
+    border-radius:5px;
+    color: gray;
+    
+    display: block;
+    
+
+}
+
+.input-container{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.txtPatienceFirstName{
+    margin-top: 12px;
+    width:100%;
+    height:40px;
+    border-radius:5px;
+    color: gray;
+}
+
+.txtPatienceLastName{
+    width:100%;
+    height:40px;
+    border-radius:5px;
+    color: gray;
+    margin-top:30px;
+   
+}
+
+.last-name{
+    margin-right:30px;
+}
+
+.general-patient-information {
+    margin-block: 25px;
+    width:650px;
+    margin-left:40px;
+}
+
+.pgeneral-patient-information label{
+    display:block;
+    margin-bottom:12px;
+    font-weight: bold;
+
+}
+.general-patient-information label::after{
+    content:"*";
+    margin-left:5px;
+    color: red;
+}
+
+.general-patient-information span{
+    display: block;
+    margin-top:8px;
+    font-size:12px;
+    margin-left:5px;
+}
+
+.ddMDY{
+    display:flex;
+    justify-content:start;
+    margin-top:15px;
+    gap:25px;
+    margin-left:40px;
+}
+
+.ddMDY span{
+    display: block;
+}
+
+.day{
+    overflow: hidden;
+    width:220px;
+}
+
+.year{
+    overflow: hidden;
+    width:220px;
+}
+
+.month{
+    overflow: hidden;
+    width:220px;
+}
+
+.ddStyle{
+    height:40px;
+    width:100%;
+    border-radius:5px;
+    color: gray;
+}
+
+.ddMDY span{
+    margin-top:8px;
+    font-size:12px;
+    margin-left:5px;
+
+}
+
+.patience-birth-date-container{
+    margin-top:20px;
+}
+
+.patience-birth-date-container label{
+    margin-left:40px;
+    font-weight: bold;
+}
+
+.patience-birth-date-container label::after{
+    content:"*";
+    color: red;
+    margin-left:5px;
+}
+
+
+.patient-details-container{
+    margin-block: 25px;
+    width:650px;
+    margin-left:40px;
+    margin-top:40px;
+}
+
+.patient-details-container label{
+    display:block;
+    margin-bottom:12px;
+    font-weight: bold;
+
+}
+.patient-details-container label::after{
+    content:"*";
+    margin-left:5px;
+    color: red;
+}
+
+.patient-details-input{
+    width:50%;
+    height:40px;
+    border-radius:5px;
+    color: gray;
+}
+
+.patient-medical-history-container{
+    margin-left:40px;
+    margin-top:30px;
+}
+
+.patient-medical-history-section h2{
+    margin-left:40px;
+    margin-block:20px;
+}
+
+.patient-medical-history-container label{
+    display:block;
+    margin-bottom:12px;
+    font-weight: bold;
+}
+
+.patient-medical-history-container input{
+    width:600px;
+    height:200px;
+}
+
+.checkbox-container{
+    margin-top:40px;
+    margin-left:40px;
+}
+
+.checkbox-container label{
+    display:block;
+    margin-bottom:12px;
+    font-weight:550;
+}
+
+.checkbox-options-container{
+    margin-top:10px;
+}
+
+.dieases-name{
+    margin-block:15px;
+}
+
+.license-container{
+    margin-top:40px;
+    margin-left:40px;
+}
+
+.license-container label{
+    display:block;
+    margin-bottom:12px;
+    font-weight: bold;
+}
+
+.license-container input {
+    width:50%;
+    height:40px;
+    border-radius:5px;
+    color: gray;
+    margin-top:10px;
+}
+
+.healthy-unhealthy-habits-section{
+    margin-block:20px;
+}
+
+.healthy-unhealthy-habits-section h3{
+    margin-left:40px;
+    margin-block:20px;
+}
+
+.exercise-container{
+    margin-top:30px;
+    margin-left:40px;
+}
+
+.exercise-container label{
+    margin-bottom:10px;
+}
+
+.rbExercise{
+    margin-block:10px;
+}
+
+
+.Eating-diet-container{
+    margin-top:30px;
+    margin-left:40px;
+}
+
+.Eating-diet-container label{
+    margin-bottom:10px;
+}
+
+.rbEatingDiet{
+    margin-block:10px;
+}
+
+.alcohol-consumption-container{
+    margin-top:30px;
+    margin-left:40px;
+}
+
+.alcohol-consumption-container label{
+    margin-bottom:10px;
+}
+
+.rbAlcoholConsumption{
+    margin-block:10px;
+}
+
+.caffeine-consumption-container{
+    margin-top:30px;
+    margin-left:40px;
+}
+
+.caffeine-consumption-container label{
+    margin-bottom:10px;
+}
+
+.rbCaffeineConsumption{
+    margin-block:10px;
+}
+
+.Smoke-container{
+    margin-top:30px;
+    margin-left:40px;
+}
+
+.Smoke-container label{
+    margin-bottom:10px;
+}
+
+.rbsmoke{
+    margin-block:10px;
+}
+
+.comments-medical-history-container{
+    margin-left:40px;
+    margin-block: 40px;
+}
+
+.comments-medical-history-container label{
+    display:block;
+    margin-bottom:12px;
+    font-weight: bold;
+}
+
+.btnSubmit{
+    border: none;
+    width: 150px;
+    height: 60px;
+    background-color: green;
+    margin-left: 40px;
+    margin-block: 50px ;
+    color: white;
+    
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 3px;
+    font-weight: bold;
+}
