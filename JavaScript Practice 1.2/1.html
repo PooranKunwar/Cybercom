@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Display & Update</title>
+</head>
+<body>
+
+
+    <script>
+
+        let person ={
+            name: 'Pooran',
+            age: 20,
+            address: 'Dadra and Nagar Haveli',
+            phone: 8487053712,
+        };
+
+        document.write("<p>Name : " + person.name + "</p>");
+        document.write("<p>Age : " + person.age + "</p>" );
+        document.write("<p>Address : " + person.address + "</p>");
+        document.write("<p> Phone Number : " + person.phone + "</p>");
+
+        person.age = 21;
+        person.address = "Masat, Silvassa";
+
+        document.write("<p>Updated Age : " + person.age + "</p>");
+        document.write("<p> Updated Address : " +person.address + "</p>");
+
+    </script>
+
+
+</body>
+</html>

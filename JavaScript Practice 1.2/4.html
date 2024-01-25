@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Property Filtering Example</title>
+</head>
+<body>
+
+    <script>
+ 
+        function filterObjectProperties(inputObject, propertiesToKeep) {
+
+            var filteredObject = {};
+
+            for (var i = 0; i < propertiesToKeep.length; i++) {
+                
+                var propertyName = propertiesToKeep[i];
+
+                if (inputObject.hasOwnProperty(propertyName)) {
+                    filteredObject[propertyName] = inputObject[propertyName];
+                };
+            };
+
+            return filteredObject;
+        };
+
+
+        var originalObject = {
+            name: "pooran",
+            age: 25,
+            address: "silvassa",
+        };
+
+        var propertiesToKeep = ["name", "age"];
+
+        var filteredObject = filterObjectProperties(originalObject, propertiesToKeep);
+
+
+        document.write("<p>Original Object:</p>");
+        displayObject(originalObject);
+
+        document.write("<p>Filtered Object:</p>");
+        displayObject(filteredObject);
+
+
+        function displayObject(obj) {
+            for (var key in obj) {
+                document.write("<p>" + key + ": " + obj[key] + "</p>");
+            };
+        };
+
+    </script>
+
+</body>
+</html>

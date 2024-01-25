@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Object</title>
+</head>
+<body>
+
+    <script>
+        
+        let people = [
+            { name: "pooran", age: 20, address: "silvassa"},
+            { name: "kunwar", age: 21, address: "rajkot"},
+            { name: "leelbahadur", age: 48, address: "rakholi"},
+        ];
+
+        for(let i = 0; i < people.length; i++){
+            document.write("<p>Person : " + (i + 1) + "</p>");
+            document.write("<p> Name : " + people[i].name + "</p>");
+            document.write("<p> Age : " + people[i].age + "</p>");
+            document.write("<p> Address : " + people[i].address + "</p>");
+        };
+
+
+    </script>
+
+</body>
+</html>

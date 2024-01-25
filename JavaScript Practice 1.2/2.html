@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate Total Price</title>
+  </head>
+  <body>
+
+    <script>
+        
+      let product = {
+        name: "Rice",
+        price: 120,
+        quantity: 3
+      };
+
+      let totalPrice = product.price * product.quantity;
+
+      document.write("<p>Product Name : " + product.name + "<p/>");
+      document.write("<p>Product Price : " + product.price + "<p/>");
+      document.write("<p>Product Quantity : " + product.quantity + "<p>");
+      document.write("<p>Total Price : " + totalPrice + "<p/>");
+
+    </script>
+  </body>
+</html>
