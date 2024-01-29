@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECTING ELEMENTS</title>
+    <style>
+
+        .container {
+            width: 500px;
+            padding: 10px;
+            background-color: burlywood;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="box" id="box-1">
+            <p class="text">Box-1</p>
+        </div>
+
+        <div class="box random" id="box-2">
+            <p class="text">Box-2</p>
+        </div>
+
+        <div class="box" id="box-3">
+            <p class="text">Box-3</p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+        // const boxs = document.getElementsByClassName("box");
+        // console.log(boxs);
+
+        // const box1 = document.getElementById("box-1");
+        // box1.style.backgroundColor = "red";
+
+        // const divs = document.getElementsByTagName("div");
+        // console.log(divs);
+
+        // const querySelector = document.querySelector(".container .random");
+        // console.log(querySelector);
+
+        // const allQuerySelector = document.querySelectorAll(".container .random")
+        // console.log(allQuerySelector);
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <script>
+
+        // 1)
+        // A = {
+        //     name: "Pooran",
+        // }
+
+        // B = A;
+        // console.log("B value Before", B);
+
+        // A.name = "Kunwar";
+        // console.log("B value After", B);
+
+        // 2)
+        A = {
+            fullname: {
+                firstname: "Pooran",
+                lastname: "Kunwar",
+            },
+            age: 20,
+            email: "",
+        }
+
+        if(A.fullname.firstname){
+            console.log("If block");
+        }else{
+            console.log("else block");
+        }
+
+    </script>
+</body>
+</html>

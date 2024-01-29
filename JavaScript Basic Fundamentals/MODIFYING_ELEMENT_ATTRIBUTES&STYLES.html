@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODIFYING ELEMENT ATTRIBUTES & STYLES</title>
+    <style>
+
+        .container {
+            width: 500px;
+            padding: 10px;
+            background-color: burlywood;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .round-border {
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        
+        .green {
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="first" class="container">
+
+        <div class="box" id="box-1">
+            <p class="text">Box-1</p>
+        </div>
+
+        <div class="box" id="box-2">
+            <p class="text">Box-2</p>
+        </div>
+
+        <div class="box" id="box-3">
+            <p class="text">Box-3</p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // const a = first.getAttribute("class")
+        // console.log(a);
+        // console.log(first.hasAttribute("class"));
+        // console.log(first.hasAttribute("style"));
+
+        // first.setAttribute("class", "set")
+        // first.removeAttribute("class");
+
+        // const box1 = document.getElementById("box-1");
+        // box1.style.backgroundColor = "red";
+        // box1.style.color = "white";
+
+
+        // box1.className = "green round-border";
+
+
+        // box1.classList.add("round-border");
+        // box1.classList.remove("round-border");
+        // box1.classList.toggle("round-border")
+
+    </script>
+
+
+</body>
+</html>

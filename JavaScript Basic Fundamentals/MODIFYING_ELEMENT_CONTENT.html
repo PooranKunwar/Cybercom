@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODIFYING ELEMENT CONTENT</title>
+    <style>
+
+        .container {
+            width: 500px;
+            padding: 10px;
+            background-color: burlywood;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="box" id="box-1">
+            <p class="text">Box-1</p>
+        </div>
+
+        <div class="box random" id="box-2">
+            <p class="text">Box-2</p>
+        </div>
+
+        <div class="box" id="box-3">
+            <p class="text">Box-3</p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const box1 = document.getElementById("box-1");
+        // box1.innerHTML = "<h3>Hello</h3> <p>Bye</p>";
+        // box1.textContent = "Hy form textContent";
+        // box1.insertAdjacentHTML("beforebegin", "<h5>beforebegi MODIFYING ELEMENT CONTENT</h5>")
+        // box1.insertAdjacentHTML("beforeend", "<h5>beforeend MODIFYING ELEMENT CONTENT</h5>")
+        // box1.insertAdjacentHTML("afterbegin", "<h5>afterbegin MODIFYING ELEMENT CONTENT</h5>")
+        // box1.insertAdjacentHTML("afterend", "<h5>afterend  ELEMENT CONTENT</h5>")
+
+    </script>
+
+
+</body>
+</html>

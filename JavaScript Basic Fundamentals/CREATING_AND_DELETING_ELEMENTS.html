@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATING AND DELETING ELEMENTS</title>
+</head>
+
+<body>
+
+    <div id="first" class="container">
+
+        <ul class="colorName">
+
+            <li class="chlid">Red</li>
+            <li class="chlid">Blue</li>
+            <li class="chlid">Orange</li>
+            <li class="chlid">Yellow</li>
+
+        </ul>
+
+    </div>
+
+
+    <script>
+
+        let newLi = document.createElement("li");
+        newLi.className = "chlid";
+        var newText = document.createTextNode("Green");
+        newLi.appendChild(newText);
+
+        var ulElement = document.querySelector(".colorName");
+        ulElement.appendChild(newLi);
+
+        //    ulElement.removeChild(newLi);
+
+        var replacement = document.createElement("li");
+        replacement.className = "chlid";
+        var replacementText = document.createTextNode("Black");
+        replacement.appendChild(replacementText);
+
+        ulElement.replaceChild(replacement, newLi)
+
+        // document.querySelector(".colorName").remove();
+
+    </script>
+
+
+</body>
+
+</html>
