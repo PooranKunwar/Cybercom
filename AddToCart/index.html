@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .product-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+    .cartButton {
+        padding: 15px;
+    }
+  </style>
+  <title>Add to Cart Page</title>
+</head>
+<body>
+
+<div id="products">
+ 
+  <div class="product-container">
+    <img src="img/hdd.jpeg">
+    <div>
+      <h3>HDD</h3>
+      <p>$20.00</p>
+      <label for="quantity1">Quantity:</label>
+      <button onclick="changeQuantity(1, -1)">-</button>
+      <input type="number" id="quantity1" value="1" min="1">
+      <button onclick="changeQuantity(1, 1)">+</button>
+      <button onclick="addToCart(1, 'HDD', 20.00)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-container">
+    <img src="img/monitor.jpeg">
+    <div>
+      <h3>Monitor</h3>
+      <p>$35.00</p>
+      <label for="quantity2">Quantity:</label>
+      <button onclick="changeQuantity(2, -1)">-</button>
+      <input type="number" id="quantity2" value="1" min="1">
+      <button onclick="changeQuantity(2, 1)">+</button>
+      <button onclick="addToCart(2, 'Monitor', 35.00)">Add to Cart</button>
+    </div>
+  </div>
+
+  <button class="cartButton" onclick="goToCart()">Go to Cart</button>
+</div>
+
+<script>
+
+  var cart = [];
+
+  if (localStorage.getItem('cart')) {
+    cart = JSON.parse(localStorage.getItem('cart'));
+  }
+
+  function addToCart(productId, productName, productPrice) {
+    var quantityInputId = 'quantity' + productId;
+    var quantity = parseInt(document.getElementById(quantityInputId).value);
+
+    var existingItem = cart.find(item => item.id === productId);
+
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      var item = {
+        id: productId,
+        name: productName,
+        price: productPrice,
+        quantity: quantity
+      };
+      cart.push(item);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function changeQuantity(productId, delta) {
+    var quantityInputId = 'quantity' + productId;
+    var quantityInput = document.getElementById(quantityInputId);
+    var currentQuantity = parseInt(quantityInput.value);
+
+    if (currentQuantity + delta >= 1) {
+      quantityInput.value = currentQuantity + delta;
+    }
+  }
+
+  function goToCart() {
+    window.location.href = 'cart.html';
+  }
+  
+</script>
+
+</body>
+</html>
