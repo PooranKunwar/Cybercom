@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="styles/patientdashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Patient Dashboard</h1>
+      <h2>Book Appointment</h2>
+      <form id="appointment-form">
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" placeholder="Name" />
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor"></select>
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" />
+        <label for="time">Select Time:</label>
+        <input type="time" id="time" />
+        <button type="submit">Book Appointment</button>
+      </form>
+      <div id="appointment-message"></div>
+      <h2>Your Appointments</h2>
+      <div id="appointments-list"></div>
+      <button id="logout-btn">Logout</button>
+    </div>
+    <script src="scripts/patientdashboard.js"></script>
+  </body>
+</html>
