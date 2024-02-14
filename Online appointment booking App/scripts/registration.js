@@ -1,13 +1,50 @@
-function isValiduserFullname(userFullname) {
-    return userFullname.trim() !== '';
+function isValidUserFullname(userFullname) {
+    return /^[A-Za-z\s]+$/.test(userFullname.trim());
 }
 
 function isValidUsername(username) {
-    return username.trim() !== '' && username.length >= 4;
+    var errors = [];
+
+    if (username.trim() === '') {
+        errors.push('Please enter a username.');
+    } 
+    
+    else if (username.length < 4) {
+        errors.push('Username must be at least 4 characters long.');
+    }
+
+    return errors.length === 0 ? true : errors;
 }
 
 function isValidPassword(password) {
-    return password.trim() !== '' && password.length >= 6;
+
+    var errors = [];
+
+    if (password.trim() === '') {
+        errors.push('Please enter a password.');
+    } 
+    
+    else if (password.length < 6) {
+        errors.push('Password must be at least 6 characters long.');
+    }
+
+    else if (!/[A-Z]/.test(password)) {
+        errors.push('Password must contain at least one uppercase letter.');
+    }
+
+    else if (!/[a-z]/.test(password)) {
+        errors.push('Password must contain at least one lowercase letter.');
+    }
+
+    else if (!/\d/.test(password)) {
+        errors.push('Password must contain at least one digit.');
+    }
+
+    else if (!/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password)) {
+        errors.push('Password must contain at least one special character.');
+    }
+
+    return errors.length === 0 ? true : errors;
 }
 
 function isValidRole(role) {
@@ -15,11 +52,14 @@ function isValidRole(role) {
 }
 
 function showError(message) {
-    document.getElementById('error-message').textContent = message;
+    var errorMessage = document.getElementById('error-message');
+    errorMessage.textContent = message;
+    errorMessage.style.color = 'red';
 }
 
 function clearError() {
-    document.getElementById('error-message').textContent = '';
+    var errorMessage = document.getElementById('error-message');
+    errorMessage.textContent = '';
 }
 
 function getRegistrations() {
@@ -31,38 +71,49 @@ function getNextId() {
     return registrations.length > 0 ? registrations[registrations.length - 1].id + 1 : 1;
 }
 
-document.getElementById('registration-form').addEventListener('submit', function(event) {
+function registerUser(event) {
     event.preventDefault();
 
-    var userFullname = document.getElementById('userFullname');
+    var userFullnameInput = document.getElementById('userFullname');
     var usernameInput = document.getElementById('username');
     var passwordInput = document.getElementById('password');
+    var confirmPasswordInput = document.getElementById('confirm-password');
     var roleInput = document.getElementById('role');
 
-    var userFullname = userFullname.value;
+    var userFullname = userFullnameInput.value;
     var username = usernameInput.value;
     var password = passwordInput.value;
+    var confirmPassword = confirmPasswordInput.value;
     var role = roleInput.value;
     var id = getNextId();
 
+    clearError();
 
-    if (!isValiduserFullname(userFullname)) {
-        showError('Enter full name !');
+    if (!isValidUserFullname(userFullname)) {
+        showError('Please enter a valid full name containing only alphabets.');
         return;
     }
 
-    if (!isValidUsername(username)) {
-        showError('Username must be at least 4 characters long !');
+    var usernameValidation = isValidUsername(username);
+    if (usernameValidation !== true) {
+        showError(usernameValidation.join(' '));
         return;
     }
 
-    if (!isValidPassword(password)) {
-        showError('Password must be at least 6 characters long !');
+
+    var passwordValidation = isValidPassword(password);
+    if (passwordValidation !== true) {
+        showError(passwordValidation.join(' '));
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        showError('Passwords do not match.');
         return;
     }
 
     if (!isValidRole(role)) {
-        showError('Enter Role !');
+        showError('Please select your role.');
         return;
     }
 
@@ -73,19 +124,15 @@ document.getElementById('registration-form').addEventListener('submit', function
         return;
     }
 
-    registrations.push({ id: id, fullname:userFullname, username: username, password: password, role: role });
-
+    registrations.push({ id: id, fullname: userFullname, username: username, password: password, role: role });
     localStorage.setItem('registrations', JSON.stringify(registrations));
 
     window.location.href = 'login.html';
     alert('Registration successful');
-    
-});
+}
 
-document.querySelectorAll('input, select').forEach(function(input) {
+document.getElementById('registration-form').addEventListener('submit', registerUser);
+
+document.querySelectorAll('input, select').forEach(function (input) {
     input.addEventListener('input', clearError);
 });
-
-
-
-

@@ -2,55 +2,123 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
     text-align: center;
 }
 
-#appointments-list {
-    margin-top: 20px;
+#availability-form {
+    margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 5px;
-    margin: 5px;
+#availability-form label {
+    display: block;
+    margin-bottom: 10px;
 }
 
-li {
-    border: 1px solid #ddd;
+#availability-form input {
+    width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-button {
-    padding: 5px 10px;
+#availability-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
+    border-radius: 5px;
+    margin-left: 12px;
 }
 
-.accept-btn{
-    margin-left: 10px;
+#appointments-list {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 10px;
 }
 
-button:hover {
-    background-color: #0056b3;
+#appointments-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#appointments-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
 }
 
 #logout-btn {
-    margin-top: 20px;
+    display: block;
+    width: 100%;
+    padding: 10px;
     background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 12px;
+}
+
+.appointment {
+    border: 1px solid darkgrey;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.approve-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.reject-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.reschedule-btn {
+    background-color:lightskyblue;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    #availability-form input[type="time"] {
+        font-size: 14px;
+    }
+
+    #appointments-list li {
+        font-size: 14px;
+    }
+
+    #logout-btn {
+        font-size: 14px;
+    }
 }

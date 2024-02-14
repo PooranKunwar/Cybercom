@@ -1,9 +1,21 @@
 function isValidUsername(username) {
-    return username.trim() !== '' && username.length >= 4;
+    var errors = [];
+
+    if (username.trim() === '') {
+        errors.push('Please enter a username.');
+    }
+
+    return errors.length === 0 ? true : errors;
 }
 
 function isValidPassword(password) {
-    return password.trim() !== '' && password.length >= 6;
+    var errors = [];
+
+    if (password.trim() === '') {
+        errors.push('Please enter a password.');
+    }
+
+    return errors.length === 0 ? true : errors;
 }
 
 function showError(message) {
@@ -24,13 +36,15 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    if (!isValidUsername(username)) {
-        showError('Invalid username.');
+    var usernameValidation = isValidUsername(username);
+    if (usernameValidation !== true) {
+        showError(usernameValidation.join(' '));
         return;
     }
 
-    if (!isValidPassword(password)) {
-        showError('Invalid password.');
+    var passwordValidation = isValidPassword(password);
+    if (passwordValidation !== true) {
+        showError(passwordValidation.join(' '));
         return;
     }
 
@@ -44,6 +58,8 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         showError('Invalid username or password.');
         return;
     }
+
+    localStorage.setItem("currentUser", username)
 
     if (user.role === 'patient') {
         window.location.href = 'patientdashboard.html';

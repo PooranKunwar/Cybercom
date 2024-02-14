@@ -22,58 +22,59 @@ function getNextAppointmentId() {
 
 function bookAppointment(event) {
     event.preventDefault();
-    
-    var name = document.getElementById('name').value; 
+
     var doctor = document.getElementById('doctor').value;
     var date = document.getElementById('date').value;
     var time = document.getElementById('time').value;
+    const patientName = localStorage.getItem("currentUser");
 
-    if (!name || !doctor || !date || !time) {
+    if (!doctor || !date || !time || !patientName) {
         var appointmentMessage = document.getElementById('appointment-message');
         appointmentMessage.textContent = 'Please fill all fields';
         appointmentMessage.style.color = 'red';
         return;
     }
 
-    var appointments = JSON.parse(localStorage.getItem('appointments')) || [];
-    var id = getNextAppointmentId();
+    const appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+    const id = getNextAppointmentId();
 
-    appointments.push({
+    const appointment = {
         id: id,
-        name: name,
+        name: patientName,
         doctor: doctor,
         date: date,
-        time: time
-    });
+        time: time,
+        status: 'Scheduled',
+    };
 
-    localStorage.setItem('appointments', JSON.stringify(appointments));
+    appointments.push(appointment);
+
+    localStorage.setItem("appointments", JSON.stringify(appointments));
 
     var appointmentMessage = document.getElementById('appointment-message');
     appointmentMessage.textContent = 'Appointment booked successfully!';
     appointmentMessage.style.color = 'green';
-
-    document.getElementById('name').value = '';
-    document.getElementById('doctor').value = '';
-    document.getElementById('date').value = '';
-    document.getElementById('time').value = '';
-
     displayAppointments();
 }
 
-
 function displayAppointments() {
+    var currentUser = localStorage.getItem("currentUser");
     var appointments = JSON.parse(localStorage.getItem('appointments')) || [];
     var appointmentsList = document.getElementById('appointments-list');
     appointmentsList.innerHTML = '';
 
-    if (appointments.length === 0) {
+    var userAppointments = appointments.filter(function(appointment) {
+        return appointment.name === currentUser;
+    });
+
+    if (userAppointments.length === 0) {
         appointmentsList.innerHTML = '<p>No appointments scheduled.</p>';
     } else {
         appointmentsList.innerHTML = '<ul>';
-        appointments.forEach(function(appointment) {
+        userAppointments.forEach(function(appointment) {
             appointmentsList.innerHTML += `
                 <li>
-                    ${appointment.date} - ${appointment.time} with ${appointment.doctor} (Patient: ${appointment.name}) 
+                    Name : ${appointment.name}, Date & Time : ${appointment.date} - ${appointment.time} with ${appointment.doctor}, Statues : ${appointment.status}
                 </li>
             `;
         });
@@ -82,6 +83,7 @@ function displayAppointments() {
 }
 
 function logout() {
+    localStorage.removeItem('currentUser');
     localStorage.removeItem('username');
     localStorage.removeItem('role');
     window.location.href = 'login.html';
