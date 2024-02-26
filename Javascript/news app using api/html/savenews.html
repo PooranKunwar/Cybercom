@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved News</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/index.html">Home</a>
+        <a href="#">Save News</a>
+    </div>
+    <div class="container">
+        <h2>Saved News</h2>
+        <div class="card-container" id="saved-news-list"></div>
+    </div>
+    <script>
+        function displaySavedArticles() {
+            const savedNewsList = document.getElementById('saved-news-list');
+            savedNewsList.innerHTML = ''; // Clear previous saved news data
+            const savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
+            savedArticles.forEach(article => {
+                const cardDiv = document.createElement('div');
+                cardDiv.classList.add('card');
+                cardDiv.innerHTML = `
+                    <img src="${article.imageUrl}" alt="Article Image">
+                    <h3>${article.title}</h3>
+                    <p>${article.description}</p>
+                    <button onclick="removeArticle(${article.id})">Remove Article</button>`;
+
+                savedNewsList.appendChild(cardDiv);
+            });
+        }
+
+        function removeArticle(id) {
+            let savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
+            savedArticles = savedArticles.filter(article => article.id !== id); // Remove the article with the specified ID
+            localStorage.setItem('savedArticles', JSON.stringify(savedArticles));
+            displaySavedArticles(); 
+        }
+
+        window.onload = function () {
+            displaySavedArticles();
+        };
+    </script>
+</body>
+
+</html>
+
+

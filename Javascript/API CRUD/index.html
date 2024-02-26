@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fetch Api</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="margin-left: 500px;" class>Quotes</h1>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <h3>Add Quotes</h3>
+          <form class="addEmployeeForm">
+            <div class="form-group">
+              <label for="txtName">Author Name:</label>
+              <input type="text" name="txtName" id="txtName" class="form-control" >
+              <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="txtJob">Quote:</label>
+              <input type="text" name="txtQuote" id="txtQuote" class="form-control">
+              <span id="quoteError"></span>
+            </div>
+            <button class="btn btn-primary mt-3" id="addBtn">Add</button>
+          </form>
+        </div>
+      </div>
+      <div class="row m-3">
+        <div class="col-md-3 d-flex" style="margin-left: 900px;">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search Quotes by author"
+            aria-label="Search"
+            id="txtSearch"
+          />
+          <button class="btn my-2 my-sm-0" type="submit" id="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+          </svg></button>
+        </div>
+      </div>
+      <div class="row">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Index</th>
+              <th scope="col">Author</th>
+              <th scope="col">Quote</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="tableData">
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="spinner" class="spinner-border" role="status" style="margin-left: 600px;">
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

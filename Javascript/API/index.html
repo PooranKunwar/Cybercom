@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>API</title>
+</head>
+
+<body>
+    <div>
+        <h3>XHR</h3>
+        <button onclick="getDataUsingXhr()">Get Data</button>
+        <button onclick="getSpecificDataUsingXhr()">Get Specific Data</button>
+        <button onclick="createDataUsingXhr()">Create Data</button>
+        <button onclick="updateDataUsingXhr()">Update Data</button>
+        <button onclick="deleteDataUsingXhr()">Delete Data</button>
+    </div>
+
+    <div>
+        <h3>AJAX</h3>
+        <button id="getDataUsingAjax">Get Data</button>
+        <button id="getSpecificDataUsingAjax">Get Specific Data</button>
+        <button id="createDataUsingAjax">Create Data</button>
+        <button id="updateDataUsingAjax">Update Data</button>
+        <button id="deleteDataUsingAjax">Delete Data</button>
+    </div>
+
+    <div>
+        <h3>FETCH</h3>
+        <button onclick="getDataUsingFetch()">Get Data</button>
+        <button onclick="getSpecificDataUsingFetch()">Get Specific Data</button>
+        <button onclick="createDataUsingFetch()">Create Data</button>
+        <button onclick="updateDataUsingFetch()">Update Data</button>
+        <button onclick="deleteDataUsingFetch()">Delete Data</button>
+    </div>
+
+    <div id="fetchApiData">
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
