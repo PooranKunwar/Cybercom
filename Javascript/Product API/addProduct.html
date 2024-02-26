@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="app/css/addProduct.css">
+</head>
+
+<body>
+
+    <div id="product-details" class="container">
+        <h2>Add Product Details</h2>
+        <form id="update-form" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter product title">
+                <div id="title-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" placeholder="Enter product price">
+                <div id="price-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Enter product description"></textarea>
+                <div id="description-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="categoryId">Category ID:</label>
+                <input type="text" id="categoryId" name="categoryId" placeholder="Enter category ID">
+                <div id="categoryId-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="images">Images:</label>
+                <input type="text" id="images" name="images" placeholder="Enter image URLs separated by commas">
+                <div id="images-error" class="error-message"></div>
+            </div>
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+
+    <script src="app/js/addProduct.js"></script>
+</body>
+
+</html>

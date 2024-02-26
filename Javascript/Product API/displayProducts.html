@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="app/css/displayProducts.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="header-title">Product's List</h1>
+        <button id="add-product-btn" class="add-product-btn" onclick="addProduct()">Add New Product</button>
+    </header>
+
+    <div id="search-container" class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Search by product title">
+        <button id="search-btn" class="search-btn" onclick="searchProducts()">Search</button>
+    </div>
+
+    <div id="filter-container" class="filter-container">
+        <label for="sort-select">Sort by Price:</label>
+        <select id="sort-select">
+            <option value="">--Select--</option>
+            <option value="price_asc">Price Low to High</option>
+            <option value="price_desc">Price High to Low</option>
+        </select>
+        
+        <label for="category-select">Filter by Category:</label>
+        <select id="category-select">
+            <option value="">--Select--</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home_decor">Home Decor</option>
+        </select>
+    </div>
+
+    <div id="product-container" class="product-container"></div>
+
+    <div id="pagination-container" class="pagination-container"></div>
+
+    <script src="app/js/displayProducts.js"></script>
+</body>
+</html>
