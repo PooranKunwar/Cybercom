@@ -29,8 +29,10 @@
                 <div id="description-error" class="error-message"></div>
             </div>
             <div class="form-group">
-                <label for="categoryId">Category ID:</label>
-                <input type="text" id="categoryId" name="categoryId" placeholder="Enter category ID">
+                <label for="categoryId">Category:</label>
+                <select id="categoryId" name="categoryId">
+                    <option value="">Select Category</option>
+                </select>
                 <div id="categoryId-error" class="error-message"></div>
             </div>
             <div class="form-group">
@@ -38,7 +40,9 @@
                 <input type="text" id="images" name="images" placeholder="Enter image URLs separated by commas">
                 <div id="images-error" class="error-message"></div>
             </div>
+
             <button type="submit">Add Product</button>
+            <a href="displayProducts.html" class="back-button">Back to Product List</a>
         </form>
     </div>
 

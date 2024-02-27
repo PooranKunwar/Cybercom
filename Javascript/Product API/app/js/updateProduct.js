@@ -101,7 +101,6 @@ const submitUpdatedProduct = (productId) => {
           throw new Error("Failed to update product data");
         }
         alert("Product data updated successfully");
-        window.location.href = "displayProducts.html";
       })
       .catch((error) => {
         console.error("Error updating product data:", error);

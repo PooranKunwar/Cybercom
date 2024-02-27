@@ -31,7 +31,7 @@ function validateForm() {
     const categoryIdInput = document.getElementById('categoryId');
     const categoryIdError = document.getElementById('categoryId-error');
     if (!categoryIdInput.value.trim()) {
-        categoryIdError.textContent = 'Category ID is required';
+        categoryIdError.textContent = 'Category is required';
         isValid = false;
     }
 
@@ -45,12 +45,39 @@ function validateForm() {
     return isValid;
 }
 
+async function populateCategories() {
+    const categorySelect = document.getElementById("categoryId");
+
+    try {
+        const response = await fetch("https://api.escuelajs.co/api/v1/categories");
+        const categories = await response.json();
+
+        categories.forEach(category => {
+            const option = document.createElement("option");
+            option.value = category.id;
+            option.textContent = category.name;
+            categorySelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Error fetching categories:", error);
+    }
+}
+
+populateCategories();
+
+
 async function addProduct() {
-    const title = document.getElementById("title").value;
-    const price = document.getElementById("price").value;
-    const description = document.getElementById("description").value;
-    const categoryId = document.getElementById("categoryId").value;
-    const images = document.getElementById("images").value.split(",");
+    const titleInput = document.getElementById("title");
+    const priceInput = document.getElementById("price");
+    const descriptionInput = document.getElementById("description");
+    const categoryIdInput = document.getElementById("categoryId");
+    const imagesInput = document.getElementById("images");
+
+    const title = titleInput.value;
+    const price = priceInput.value;
+    const description = descriptionInput.value;
+    const categoryId = categoryIdInput.value;
+    const images = imagesInput.value.split(",");
 
     const url = "https://api.escuelajs.co/api/v1/products/";
 
@@ -71,7 +98,7 @@ async function addProduct() {
 
         if (response.ok) {
             alert("Product added successfully!");
-            window.location.href = "displayProducts.html";
+            clearFormFields();
         } else {
             const errorMessage = await response.text();
             alert(`Failed to add product: ${errorMessage}`);
@@ -81,6 +108,15 @@ async function addProduct() {
         alert("An error occurred while adding the product. Please try again later.");
     }
 }
+
+function clearFormFields() {
+    document.getElementById("title").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("categoryId").value = "";
+    document.getElementById("images").value = "";
+}
+
 
 document.getElementById("update-form").addEventListener("submit", function (event) {
     event.preventDefault();

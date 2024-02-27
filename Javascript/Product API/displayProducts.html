@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
     <link rel="stylesheet" href="app/css/displayProducts.css">
 </head>
+
 <body>
 
     <header class="header">
@@ -19,19 +21,18 @@
     </div>
 
     <div id="filter-container" class="filter-container">
-        <label for="sort-select">Sort by Price:</label>
+        <label for="sort-select">Sort:</label>
         <select id="sort-select">
-            <option value="">--Select--</option>
+            <option value="">Select Sorting</option>
+            <option value="alphabetical_asc">Alphabetical A-Z</option>
+            <option value="alphabetical_desc">Alphabetical Z-A</option>
             <option value="price_asc">Price Low to High</option>
             <option value="price_desc">Price High to Low</option>
         </select>
-        
+
         <label for="category-select">Filter by Category:</label>
-        <select id="category-select">
-            <option value="">--Select--</option>
-            <option value="electronics">Electronics</option>
-            <option value="clothing">Clothing</option>
-            <option value="home_decor">Home Decor</option>
+        <select id="category-select" name="category-select">
+            <option value="">Select Category</option>
         </select>
     </div>
 
@@ -41,4 +42,5 @@
 
     <script src="app/js/displayProducts.js"></script>
 </body>
+
 </html>
