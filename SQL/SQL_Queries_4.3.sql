@@ -83,9 +83,9 @@ WHERE user_id IN (SELECT id FROM users WHERE email LIKE '%test%');
 
 -- 9)Retrieve the total amount of orders placed on each day of the current week, grouped by day.
 
-SELECT DATE_TRUNC('day', created_at) AS order_date, SUM(amount) AS total_amount
+SELECT DATE(created_at) AS order_date, SUM(amount) AS total_amount
 FROM orders
-WHERE created_at >= CURRENT_DATE - EXTRACT(DOW FROM CURRENT_DATE) * INTERVAL '1 day'
+WHERE YEARWEEK(created_at) = YEARWEEK(NOW())
 GROUP BY order_date;
 
 -- 10)Retrieve the IDs and email addresses of users who have placed an order in the current year and whose email address is in the format "example.com".
@@ -95,4 +95,3 @@ FROM users u
 JOIN orders o ON u.id = o.user_id
 WHERE EXTRACT(YEAR FROM o.created_at) = EXTRACT(YEAR FROM CURRENT_DATE)
 AND u.email LIKE '%@example.com%';
-
